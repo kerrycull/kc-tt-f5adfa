@@ -1,0 +1,185 @@
+/* KC's Tennis Tracker */
+:root {
+  --paper: #f4efe6;
+  --ink: #1c1914;
+  --muted: #6b6458;
+  --line: #ddd4c6;
+  --green: #21563a;
+  --green-soft: #e4efe8;
+  --clay: #b85a32;
+  --clay-soft: #f6e6de;
+  --rust: #8a2f22;
+  --card: #fffdf8;
+  --shadow: 0 1px 2px rgba(28, 25, 20, 0.06);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.45;
+  min-height: 100vh;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 1.75rem 1.15rem 3.5rem; }
+header.site { margin-bottom: 1.75rem; }
+header.site h1 {
+  font-size: clamp(1.8rem, 5vw, 2.45rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+.note {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.perf {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.15rem 1.25rem 1.05rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.perf .label {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.15rem;
+}
+.perf .pnl {
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2.4rem, 9vw, 3.4rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+}
+.perf .pnl.pos { color: var(--green); }
+.perf .pnl.neg { color: var(--rust); }
+.perf .meta {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  color: var(--muted);
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.85rem;
+}
+.matches { display: flex; flex-direction: column; gap: 0.85rem; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.95rem 1rem 0.9rem;
+  box-shadow: var(--shadow);
+}
+.eyebrow {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 0.65rem;
+}
+.player {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+  padding: 0.28rem 0;
+}
+.player + .player { border-top: 1px solid var(--line); }
+.name { font-size: 1.05rem; font-weight: 600; }
+.book {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.86rem;
+  color: var(--muted);
+  text-align: right;
+}
+.model {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.7rem;
+  margin-top: 0.7rem;
+}
+.pill {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+}
+.pill.bet { background: var(--green-soft); color: var(--green); }
+.pill.nobet { background: #eeeae2; color: #534d43; }
+.pill.norate { background: var(--clay-soft); color: var(--clay); }
+.edge {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.empty {
+  color: var(--muted);
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  padding: 1.2rem 1rem;
+  margin: 0;
+}
+a { color: var(--green); }
+nav.links { margin: 1.6rem 0 0; font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif; }
+footer.site {
+  margin-top: 2.4rem;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.history { display: flex; flex-direction: column; gap: 0.7rem; }
+.row {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  box-shadow: var(--shadow);
+}
+.row .top {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 0.3rem;
+}
+.row .match { font-weight: 600; margin: 0 0 0.4rem; }
+.grid {
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  color: #3f3a33;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 0.8rem;
+}
+.grid .units { font-weight: 650; }
+.grid .units.pos { color: var(--green); }
+.grid .units.neg { color: var(--rust); }
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
