@@ -129,8 +129,19 @@ h2 {
   padding: 0.28rem 0.7rem;
 }
 .pill.bet { background: var(--green-soft); color: var(--green); }
+.pill.lean { background: #f3ead2; color: #6a4a12; }
 .pill.nobet { background: #eeeae2; color: #534d43; }
 .pill.norate { background: var(--clay-soft); color: var(--clay); }
+.perf-lines { display: grid; gap: 0.85rem; }
+@media (min-width: 560px) {
+  .perf-lines { grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; }
+}
+.perf .pnl {
+  font-size: clamp(1.55rem, 5vw, 2.15rem);
+}
+.perf-line .label {
+  margin-bottom: 0.1rem;
+}
 .edge {
   font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   font-variant-numeric: tabular-nums;
